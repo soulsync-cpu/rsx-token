@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSX Token — Official</title>
+  <meta name="description" content="RSX Token on BSC — Fair launch, LP locked, transparent distribution." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0b0e13; --card:#121722; --accent:#5eead4; --text:#e5e7eb; --muted:#9ca3af;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui;background:var(--bg);color:var(--text)}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1100px;margin:auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-weight:700;font-size:22px;letter-spacing:1px}
+    .btn{background:var(--accent);color:#000;padding:12px 18px;border-radius:14px;font-weight:600}
+    .hero{margin:60px 0;display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
+    .card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    h1{font-size:42px;margin:0 0 12px}
+    h2{margin-top:0}
+    p{color:var(--muted);line-height:1.6}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+    ul{padding-left:18px;color:var(--muted)}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#0f766e;color:#ecfeff;font-size:12px}
+    footer{text-align:center;padding:40px 0;color:var(--muted)}
+    iframe{width:100%;height:420px;border-radius:14px;border:0}
+    @media(max-width:900px){.hero{grid-template-columns:1fr} h1{font-size:34px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">RSX</div>
+      <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x74fb660e6Bb38D6C831576eb278e37095F3bCeBd" target="_blank">Buy / Sell RSX</a>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <span class="tag">BSC • BEP20</span>
+        <h1>RSX Token</h1>
+        <p>RSX is a transparent, community-driven token launched on Binance Smart Chain. No minting, no hidden taxes, no blacklist — built slow and clean.</p>
+        <p><strong>Contract:</strong> 0x74fb660e6Bb38D6C831576eb278e37095F3bCeBd</p>
+      </div>
+      <div class="card">
+        <h2>Live Chart</h2>
+        <iframe src="https://dexscreener.com/bsc/0xCd8b731Eb7a7888508bDa028383C842Af3b3F282"></iframe>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Token Distribution</h2>
+        <ul>
+          <li>Liquidity: <strong>60,000,000 RSX</strong> (LP Locked)</li>
+          <li>Owner / Reserve: <strong>740,000,000 RSX</strong></li>
+          <li>Marketing / Treasury: <strong>80,000,000 RSX</strong></li>
+          <li>Team (Locked): <strong>100,000,000 RSX</strong></li>
+          <li>Community / Airdrop: <strong>20,000,000 RSX</strong></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Airdrop Rules</h2>
+        <ul>
+          <li>Human wallets only (no bots)</li>
+          <li>One wallet per person</li>
+          <li>Small fixed allocation</li>
+          <li>Hold for minimum 7 days</li>
+          <li>Early supporters only</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>LP Lock Walkthrough</h2>
+        <ul>
+          <li>Liquidity added on PancakeSwap</li>
+          <li>LP tokens received by owner</li>
+          <li>LP locked via TeamFinance / Unicrypt</li>
+          <li>Lock duration: 3–6 months</li>
+          <li>Lock proof shared publicly</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>RSX Token • Built slow • Transparency first</p>
+    </footer>
+  </div>
+</body>
+</html>
