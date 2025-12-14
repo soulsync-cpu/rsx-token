@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RSX Token — Official</title>
   <meta name="description" content="RSX Token on BSC — Fair launch, LP locked, transparent distribution." />
+
+  <!-- Favicon & Logo -->
+  <link rel="icon" type="image/png" href="assets/rsx-logo-256.png" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -15,7 +19,9 @@
     a{text-decoration:none;color:inherit}
     .container{max-width:1100px;margin:auto;padding:24px}
     header{display:flex;justify-content:space-between;align-items:center}
-    .logo{font-weight:700;font-size:22px;letter-spacing:1px}
+    .logo-wrap{display:flex;align-items:center;gap:10px}
+    .logo-img{height:42px;width:42px;border-radius:50%}
+    .logo-text{font-weight:700;font-size:22px;letter-spacing:1px}
     .btn{background:var(--accent);color:#000;padding:12px 18px;border-radius:14px;font-weight:600}
     .hero{margin:60px 0;display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
     .card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
@@ -33,8 +39,11 @@
 <body>
   <div class="container">
     <header>
-      <div class="logo">RSX</div>
-      <div style="display:flex;gap:12px;align-items:center">
+      <div class="logo-wrap">
+        <img src="assets/rsx-logo-256.png" alt="RSX Token Logo" class="logo-img" />
+        <div class="logo-text">RSX</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
         <a class="btn" href="https://t.me/rsxrfgd" target="_blank">Telegram</a>
         <a class="btn" href="https://x.com/profitprotip" target="_blank">X (Twitter)</a>
         <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x74fb660e6Bb38D6C831576eb278e37095F3bCeBd" target="_blank">Buy / Sell RSX</a>
@@ -45,8 +54,8 @@
       <div class="card">
         <span class="tag">BSC • BEP20</span>
         <h1>RSX Token</h1>
-        <p>RSX is a transparent, community-driven token launched on Binance Smart Chain. No minting, no hidden taxes, no blacklist — built slow and clean.</p>
-        <p><strong>Contract:</strong> 0x74fb660e6Bb38D6C831576eb278e37095F3bCeBd</p>
+        <p>RSX is a transparent, community-driven token launched on Binance Smart Chain. No minting, no blacklist, and a fixed supply — built slow and clean.</p>
+        <p><strong>Contract:</strong><br>0x74fb660e6Bb38D6C831576eb278e37095F3bCeBd</p>
       </div>
       <div class="card">
         <h2>Live Chart</h2>
@@ -59,7 +68,7 @@
     <section class="grid">
       <div class="card">
         <h2>LP Lock Proof</h2>
-        <p>Liquidity is locked to protect holders and prevent rug pulls.</p>
+        <p>Liquidity is locked to protect holders and ensure long-term transparency.</p>
         <ul>
           <li>Platform: <strong>Pinksale</strong></li>
           <li>Pair: RSX / BNB</li>
@@ -68,12 +77,12 @@
         <p>
           <a href="https://www.pinksale.finance/pinklock/bsc/record/1411549" target="_blank">View LP Lock Proof on Pinksale</a>
         </p>
-        <p style="font-size:13px;color:var(--muted)">Exact lock transaction link will be shown here.</p>
       </div>
+
       <div class="card">
         <h2>Token Distribution</h2>
         <ul>
-          <li>Liquidity: <strong>60,000,000 RSX</strong> (LP Locked)</li>
+          <li>Liquidity (Locked): <strong>60,000,000 RSX</strong></li>
           <li>Owner / Reserve: <strong>740,000,000 RSX</strong></li>
           <li>Marketing / Treasury: <strong>80,000,000 RSX</strong></li>
           <li>Team (Locked): <strong>100,000,000 RSX</strong></li>
@@ -84,11 +93,11 @@
       <div class="card">
         <h2>Airdrop Rules</h2>
         <ul>
-          <li>Human wallets only (no bots)</li>
-          <li>One wallet per person</li>
-          <li>Small fixed allocation</li>
-          <li>Hold for minimum 7 days</li>
-          <li>Early supporters only</li>
+          <li>Human wallets only (anti-bot)</li>
+          <li>One wallet per user</li>
+          <li>Fixed small allocation</li>
+          <li>7-day minimum hold</li>
+          <li>Early supporters priority</li>
         </ul>
       </div>
 
@@ -96,22 +105,22 @@
         <h2>LP Lock Walkthrough</h2>
         <ul>
           <li>Liquidity added on PancakeSwap</li>
-          <li>LP tokens received by owner</li>
-          <li>LP locked via TeamFinance / Unicrypt</li>
+          <li>LP tokens received by deployer</li>
+          <li>LP locked via Pinksale</li>
           <li>Lock duration: 3–6 months</li>
-          <li>Lock proof shared publicly</li>
+          <li>Proof shared publicly</li>
         </ul>
       </div>
     </section>
 
-        <section class="card" style="margin-top:32px">
+    <section class="card" style="margin-top:32px">
       <h2>FAQ</h2>
       <ul>
         <li><strong>Is there any mint function?</strong><br>No. Total supply is fixed at 1,000,000,000 RSX.</li>
         <li><strong>Is there any buy tax?</strong><br>No buy tax.</li>
-        <li><strong>Is there any sell tax?</strong><br>Yes. 1% sell tax applied only when selling to the PancakeSwap pair.</li>
-        <li><strong>Can the owner blacklist wallets?</strong><br>No blacklist or freeze functions exist.</li>
-        <li><strong>Is liquidity locked?</strong><br>Yes. LP tokens are locked and proof is shared above.</li>
+        <li><strong>Is there any sell tax?</strong><br>Yes. A 1% sell tax applies only when selling to the PancakeSwap pair.</li>
+        <li><strong>Can wallets be blacklisted or frozen?</strong><br>No. The contract has no blacklist or freeze logic.</li>
+        <li><strong>Is liquidity locked?</strong><br>Yes. LP tokens are locked and verifiable via Pinksale.</li>
       </ul>
     </section>
 
