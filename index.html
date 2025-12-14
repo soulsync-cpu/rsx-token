@@ -34,7 +34,11 @@
   <div class="container">
     <header>
       <div class="logo">RSX</div>
-      <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x74fb660e6Bb38D6C831576eb278e37095F3bCeBd" target="_blank">Buy / Sell RSX</a>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="btn" href="https://t.me/RSXToken" target="_blank">Telegram</a>
+        <a class="btn" href="https://x.com/RSXToken" target="_blank">X (Twitter)</a>
+        <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x74fb660e6Bb38D6C831576eb278e37095F3bCeBd" target="_blank">Buy / Sell RSX</a>
+      </div>
     </header>
 
     <section class="hero">
@@ -46,11 +50,26 @@
       </div>
       <div class="card">
         <h2>Live Chart</h2>
-        <iframe src="https://dexscreener.com/bsc/0xCd8b731Eb7a7888508bDa028383C842Af3b3F282"></iframe>
+        <p style="font-size:14px;color:var(--muted)">DexScreener iframe can be unstable on some hosts. We use DexTools for reliability.</p>
+        <iframe src="https://www.dextools.io/widget-chart/en/bnb/pe-light/0xCd8b731Eb7a7888508bDa028383C842Af3b3F282"></iframe>
+        <p style="margin-top:10px"><a href="https://dexscreener.com/bsc/0xCd8b731Eb7a7888508bDa028383C842Af3b3F282" target="_blank">View on DexScreener</a></p>
       </div>
     </section>
 
     <section class="grid">
+      <div class="card">
+        <h2>LP Lock Proof</h2>
+        <p>Liquidity is locked to protect holders and prevent rug pulls.</p>
+        <ul>
+          <li>Platform: <strong>Pinksale</strong></li>
+          <li>Pair: RSX / BNB</li>
+          <li>Status: <strong>LP Locked</strong></li>
+        </ul>
+        <p>
+          <a href="https://www.pinksale.finance/pinklock/bsc/record/1411549" target="_blank">View LP Lock Proof on Pinksale</a>
+        </p>
+        <p style="font-size:13px;color:var(--muted)">Exact lock transaction link will be shown here.</p>
+      </div>
       <div class="card">
         <h2>Token Distribution</h2>
         <ul>
@@ -83,6 +102,17 @@
           <li>Lock proof shared publicly</li>
         </ul>
       </div>
+    </section>
+
+        <section class="card" style="margin-top:32px">
+      <h2>FAQ</h2>
+      <ul>
+        <li><strong>Is there any mint function?</strong><br>No. Total supply is fixed at 1,000,000,000 RSX.</li>
+        <li><strong>Is there any buy tax?</strong><br>No buy tax.</li>
+        <li><strong>Is there any sell tax?</strong><br>Yes. 1% sell tax applied only when selling to the PancakeSwap pair.</li>
+        <li><strong>Can the owner blacklist wallets?</strong><br>No blacklist or freeze functions exist.</li>
+        <li><strong>Is liquidity locked?</strong><br>Yes. LP tokens are locked and proof is shared above.</li>
+      </ul>
     </section>
 
     <footer>
