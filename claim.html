@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RSX Airdrop Claim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.14.0/dist/ethers.umd.min.js"></script>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .box {
+      background: #141414;
+      padding: 24px;
+      border-radius: 12px;
+      width: 320px;
+      text-align: center;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h2>RSX Airdrop</h2>
+    <p id="status">Connect your wallet</p>
+
+    <button id="connectBtn">Connect Wallet</button>
+    <button id="claimBtn" disabled>Claim RSX</button>
+  </div>
+
+<script>
+const AIRDROP_ADDRESS = "0x2AE1a72ad94afF108b49bFFaE287430F1ed47143";
+
+// minimal ABI
+const ABI = [
+  "function claim() external",
+  "function claimed(address) view returns (bool)"
+];
+
+let provider, signer, contract, user;
+
+const connectBtn = document.getElementById("connectBtn");
+const claimBtn = document.getElementById("claimBtn");
+const statusText = document.getElementById("status");
+
+connectBtn.onclick = async () => {
+  if (!window.ethereum) {
+    alert("MetaMask not found");
+    return;
+  }
+
+  provider = new ethers.BrowserProvider(window.ethereum);
+  await provider.send("eth_requestAccounts", []);
+  signer = await provider.getSigner();
+  user = await signer.getAddress();
+
+  contract = new ethers.Contract(AIRDROP_ADDRESS, ABI, signer);
+
+  statusText.innerText = `Connected: ${user.slice(0,6)}...${user.slice(-4)}`;
+  connectBtn.disabled = true;
+
+  await checks();
+};
+
+async function checks() {
+  // already claimed?
+  const hasClaimed = await contract.claimed(user);
+  if (hasClaimed) {
+    statusText.innerText = "Already claimed";
+    return;
+  }
+
+  // balance check (anti-bot)
+  const balance = await provider.getBalance(user);
+  if (balance < ethers.parseEther("0.005")) {
+    statusText.innerText = "Insufficient native balance";
+    return;
+  }
+
+  claimBtn.disabled = false;
+  statusText.innerText = "Eligible to claim";
+}
+
+claimBtn.onclick = async () => {
+  claimBtn.disabled = true;
+  statusText.innerText = "Claiming RSX...";
+
+  try {
+    const tx = await contract.claim();
+    await tx.wait();
+    statusText.innerText = "RSX claimed successfully 🎉";
+  } catch (err) {
+    console.error(err);
+    statusText.innerText = "Claim failed";
+    claimBtn.disabled = false;
+  }
+};
+</script>
+</body>
+</html>
